@@ -7,6 +7,7 @@ import { HttpClientInMemoryWebApiModule  } from 'angular-in-memory-web-api';
 import { ProductData } from './products/product-data';
 
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ShellComponent } from './home/shell.component';
@@ -16,6 +17,8 @@ import { PageNotFoundComponent } from './home/page-not-found.component';
 
 /* Feature Modules */
 import { UserModule } from './user/user.module';
+import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
+import { EventBindingComponent } from './event-binding/event-binding.component';
 
 @NgModule({
   imports: [
@@ -23,14 +26,17 @@ import { UserModule } from './user/user.module';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(ProductData),
     UserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,
     ShellComponent,
     MenuComponent,
     WelcomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TwoWayBindingComponent,
+    EventBindingComponent
   ],
   bootstrap: [ AppComponent ]
 })

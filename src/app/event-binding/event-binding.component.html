@@ -1,0 +1,11 @@
+<div>
+  <h3>Event Binding</h3>
+  <button class="btn btn-information" (click)="toggleImage()">
+    {{showImage ? 'Hide' : 'Show'}} Image
+  </button>
+  <p>
+    <img src="../../assets/images/logo.jpg" *ngIf="showImage" 
+            [style.width.px]="imageWidth" 
+            [style.margin.px]="margin">
+  </p>
+</div>
