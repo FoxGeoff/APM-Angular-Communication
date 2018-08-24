@@ -18,13 +18,8 @@ export class ProductListComponent implements OnInit, AfterViewInit {
     products: IProduct[];
 
     @ViewChild('filterElement') filterElementRef;
-
-    @ViewChildren("filterElement, nameElement")
-        inputElementRefs: QueryList<ElementRef>;
-
     ngAfterViewInit(): void {
         this.filterElementRef.nativeElement.focus();
-        console.log(this.inputElementRefs);
     }
 
     private _listFilter: string;
