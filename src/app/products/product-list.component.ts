@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ViewChildren, QueryList, ElementRef } from '@angular/core';
 
 import { IProduct } from './product';
 import { ProductService } from './product.service';
@@ -18,8 +18,13 @@ export class ProductListComponent implements OnInit, AfterViewInit {
     products: IProduct[];
 
     @ViewChild('filterElement') filterElementRef;
+
+    @ViewChildren("filterElement, nameElement")
+        inputElementRefs: QueryList<ElementRef>;
+
     ngAfterViewInit(): void {
         this.filterElementRef.nativeElement.focus();
+        console.log(this.inputElementRefs);
     }
 
     private _listFilter: string;
