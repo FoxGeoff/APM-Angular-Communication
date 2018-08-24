@@ -16,6 +16,7 @@ export class ProductListComponent implements OnInit, AfterViewInit {
     errorMessage: string;
     filteredProducts: IProduct[];
     products: IProduct[];
+    hitCount: number;
 
     @ViewChild('filterElement') filterElementRef;
     ngAfterViewInit(): void {
@@ -51,6 +52,7 @@ export class ProductListComponent implements OnInit, AfterViewInit {
         if (filterBy) {
             this.filteredProducts = this.products.filter((product: IProduct) =>
                 product.productName.toLocaleLowerCase().indexOf(filterBy.toLocaleLowerCase()) !== -1);
+            this.hitCount = this.filteredProducts.length;
         } else {
             this.filteredProducts = this.products;
         }
