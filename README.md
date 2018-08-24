@@ -29,3 +29,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Check: Initial
 
 ## Check: Add examples for binding
+
+##Check: Add Filter Getter/Setter
