@@ -22,6 +22,7 @@ export class ProductListComponent implements OnInit {
     }
     public set listFilter(value: string) {
         this._listFilter = value;
+        this.performFilter(this.listFilter);
     }
 
     constructor(private productService: ProductService) { }
